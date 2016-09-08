@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron text-cent">
+<div class="jumbotron text-center">
   <p>Welcome to ScheduleDuty!</p>
 </div>
+<form method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="csvs[]">CSV File(s)</label>
+    <input type="file" class="form-control" name="csvs[]">
+  </div>
+  <button class="btn btn-primary" type="submit">Upload</button>
+</form>
 {% endblock %}
