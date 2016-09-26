@@ -5,8 +5,51 @@
 </div>
 <form method="post" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="csvs[]">CSV File(s)</label>
-    <input type="file" class="form-control" name="csvs[]">
+    <label for="csvs">CSV File(s)</label>
+    <input type="file" class="form-control" name="csvs" required>
+  </div>
+  <div class="form-group">
+    <label for="schedule_type">Schedule Type</label>
+    <select name="schedule_type" class="form-control">
+      <option value="weekly_shifts">Weekly Shifts</option>
+      <option value="standard_rotation">Standard Rotation</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="api_key">API Token</label>
+    <input type="text" class="form-control" name="api_key" required>
+  </div>
+  <div class="form-group">
+    <label for="base_name">Base Name</label>
+    <input type="text" class="form-control" name="base_name" required>
+  </div>
+  <div class="form-group">
+    <label for="level_name">Level Name</label>
+    <input type="text" class="form-control" name="level_name">
+  </div>
+  <div class="form-group">
+    <label for="multi_name">Multi Name</label>
+    <input type="text" class="form-control" name="multi_name">
+  </div>
+  <div class="form-group">
+    <label for="start_date">Start Date</label>
+    <input type="date" class="form-control" name="start_date" required>
+  </div>
+  <div class="form-group">
+    <label for="end_date">End Date</label>
+    <input type="date" class="form-control" name="end_date" required>
+  </div>
+  <div class="form-group">
+    <label for="time_zone">Time Zone</label>
+    <input type="text" class="form-control" name="time_zone" required>
+  </div>
+  <div class="form-group">
+    <label for="num_loops">Number of Loops</label>
+    <input type="number" class="form-control" name="num_loops">
+  </div>
+  <div class="form-group">
+    <label for="escalation_delay">Escalation Delay</label>
+    <input type="number" class="form-control" name="escalation_delay">
   </div>
   <button class="btn btn-primary" type="submit">Upload</button>
 </form>
