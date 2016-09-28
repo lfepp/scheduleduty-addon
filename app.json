@@ -5,5 +5,8 @@
   "keywords": [
     "pagerduty",
     "scheduleduty"
-  ]
+  ],
+  "env": {
+    "ERROR_PAGE_URL": "http://www.lucasepp.com/scheduleduty-addon/index.html"
+  }
 }
