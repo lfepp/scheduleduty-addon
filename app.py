@@ -3,8 +3,6 @@ from werkzeug.utils import secure_filename
 from scheduleduty import scheduleduty
 import os
 
-print help(scheduleduty)
-
 cwd = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
