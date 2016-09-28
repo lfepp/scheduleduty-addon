@@ -1,0 +1,9 @@
+{
+  "name": "ScheduleDuty Add-on",
+  "description": "Create schedules and escalation policies within PagerDuty",
+  "repository": "https://github.com/lfepp/scheduleduty-addon",
+  "keywords": [
+    "pagerduty",
+    "scheduleduty"
+  ]
+}

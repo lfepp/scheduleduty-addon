@@ -1,1 +1,2 @@
 scheduleduty==0.3.1
+gunicorn==19.6.0
