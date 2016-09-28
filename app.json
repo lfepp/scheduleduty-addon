@@ -7,6 +7,6 @@
     "scheduleduty"
   ],
   "env": {
-    "ERROR_PAGE_URL": "http://www.lucasepp.com/scheduleduty-addon/index.html"
+    "ERROR_PAGE_URL": "https://heroku-error-hack.herokuapp.com/"
   }
 }
