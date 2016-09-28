@@ -3,8 +3,12 @@ from werkzeug.utils import secure_filename
 from scheduleduty import scheduleduty
 import os
 
+print help(scheduleduty)
+
+cwd = os.path.dirname(os.path.abspath(__file__))
+
 app = Flask(__name__)
-app.config['CSV_DIR'] = '/csvs'
+app.config['CSV_DIR'] = os.path.join(cwd, 'csvs')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 Mb
 
 
@@ -23,11 +27,12 @@ def index():
                not request.form['escalation_delay']):
                     flash('Missing a required field.')
                     return redirect(url_for('index'))
-            files = request.files['csvs']
-            for file in files:
-                if valid_csv(file.filename):
-                    filename = secure_filename(file.filename)
-                    file.save(os.path.join(app.config['CSV_DIR'], filename))
+            file = request.files['csvs']
+            if valid_csv(file.filename):
+                filename = secure_filename(file.filename)
+                if not os.path.isdir(app.config['CSV_DIR']):
+                    os.mkdir(app.config['CSV_DIR'])
+                file.save(os.path.join(app.config['CSV_DIR'], filename))
             importer = scheduleduty.Import(
                 'weekly_shifts',
                 app.config['CSV_DIR'],
