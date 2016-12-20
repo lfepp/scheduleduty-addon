@@ -3,10 +3,11 @@ from werkzeug.utils import secure_filename
 from scheduleduty import scheduleduty
 import os
 
-cwd = os.path.dirname(os.path.abspath(__file__))
+if not os.path.isdir(os.path.join(os.getcwd(), 'csvs')):
+    os.mkdir(os.path.join(os.getcwd(), 'csvs'))
 
 app = Flask(__name__)
-app.config['CSV_DIR'] = os.path.join(cwd, 'csvs')
+app.config['CSV_DIR'] = os.path.join(os.getcwd(), 'csvs')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16 Mb
 
 
